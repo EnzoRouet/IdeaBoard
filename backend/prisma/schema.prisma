@@ -11,7 +11,10 @@ datasource db {
 }
 
 model Idea {
-  id      Int      @id @default(autoincrement())
-  title   String
-  content String
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  author    String
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
 }
