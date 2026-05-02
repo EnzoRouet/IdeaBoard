@@ -25,6 +25,7 @@ export class IdeaService {
   }
 
   async update(id: number, updateIdeaDto: UpdateIdeaDto) {
+    await this.findOne(id);
     return await this.prisma.idea.update({
       where: { id: id },
       data: updateIdeaDto,
